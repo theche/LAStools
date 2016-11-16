@@ -64,7 +64,7 @@ extern "C"
 /*--------------- DLL variables to pass data to/from LASzip -----------------*/
 /*---------------------------------------------------------------------------*/
 
-typedef int                laszip_BOOL;
+typedef int                laszip_bool;
 typedef unsigned char      laszip_U8;
 typedef unsigned short     laszip_U16;
 typedef unsigned int       laszip_U32;
@@ -362,22 +362,22 @@ laszip_remove_vlr(
 LASZIP_API laszip_I32
 laszip_create_spatial_index(
     laszip_POINTER                     pointer
-    , const laszip_BOOL                create
-    , const laszip_BOOL                append
+    , const laszip_bool                create
+    , const laszip_bool                append
 );
 
 /*---------------------------------------------------------------------------*/
 LASZIP_API laszip_I32
 laszip_preserve_generating_software(
     laszip_POINTER                     pointer
-    , const laszip_BOOL                preserve
+    , const laszip_bool                preserve
 );
 
 /*---------------------------------------------------------------------------*/
 LASZIP_API laszip_I32
 laszip_request_compatibility_mode(
     laszip_POINTER                     pointer
-    , const laszip_BOOL                request
+    , const laszip_bool                request
 );
 
 /*---------------------------------------------------------------------------*/
@@ -385,7 +385,7 @@ LASZIP_API laszip_I32
 laszip_open_writer(
     laszip_POINTER                     pointer
     , const laszip_CHAR*               file_name
-    , laszip_BOOL                      compress
+    , laszip_bool                      compress
 );
 
 /*---------------------------------------------------------------------------*/
@@ -416,7 +416,7 @@ laszip_close_writer(
 LASZIP_API laszip_I32
 laszip_exploit_spatial_index(
     laszip_POINTER                     pointer
-    , const laszip_BOOL                exploit
+    , const laszip_bool                exploit
 );
 
 /*---------------------------------------------------------------------------*/
@@ -424,15 +424,15 @@ LASZIP_API laszip_I32
 laszip_open_reader(
     laszip_POINTER                     pointer
     , const laszip_CHAR*               file_name
-    , laszip_BOOL*                     is_compressed
+    , laszip_bool*                     is_compressed
 );
 
 /*---------------------------------------------------------------------------*/
 LASZIP_API laszip_I32
 laszip_has_spatial_index(
     laszip_POINTER                     pointer
-    , laszip_BOOL*                     is_indexed
-    , laszip_BOOL*                     is_appended
+    , laszip_bool*                     is_indexed
+    , laszip_bool*                     is_appended
 );
 
 /*---------------------------------------------------------------------------*/
@@ -443,7 +443,7 @@ laszip_inside_rectangle(
     , laszip_F64                       min_y
     , laszip_F64                       max_x
     , laszip_F64                       max_y
-    , laszip_BOOL*                     is_empty
+    , laszip_bool*                     is_empty
 );
 
 /*---------------------------------------------------------------------------*/
@@ -463,7 +463,7 @@ laszip_read_point(
 LASZIP_API laszip_I32
 laszip_read_inside_point(
     laszip_POINTER                     pointer
-    , laszip_BOOL*                     is_done
+    , laszip_bool*                     is_done
 );
 
 /*---------------------------------------------------------------------------*/

@@ -52,7 +52,7 @@
 class laszip_dll_inventory
 {
 public:
-  BOOL active() const { return (first == FALSE); }; 
+  bool active() const { return (first == FALSE); }; 
   U32 number_of_point_records;
   U32 number_of_points_by_return[16];
   I32 max_X;
@@ -100,7 +100,7 @@ public:
     first = TRUE;
   }
 private:
-  BOOL first;
+  bool first;
 };
 
 typedef struct laszip_dll {
@@ -123,12 +123,12 @@ typedef struct laszip_dll {
   F64 lax_r_max_x;
   F64 lax_r_max_y;
   CHAR* lax_file_name;
-  BOOL lax_create;
-  BOOL lax_append;
-  BOOL lax_exploit;
-  BOOL preserve_generating_software;
-  BOOL request_compatibility_mode;
-  BOOL compatibility_mode;
+  bool lax_create;
+  bool lax_append;
+  bool lax_exploit;
+  bool preserve_generating_software;
+  bool request_compatibility_mode;
+  bool compatibility_mode;
   I32 start_scan_angle;
   I32 start_extended_returns;
   I32 start_classification;
@@ -1441,7 +1441,7 @@ laszip_remove_vlr(
 LASZIP_API laszip_I32
 laszip_preserve_generating_software(
     laszip_POINTER                     pointer
-    , const laszip_BOOL                preserve
+    , const laszip_bool                preserve
 )
 {
   if (pointer == 0) return 1;
@@ -1477,7 +1477,7 @@ laszip_preserve_generating_software(
 LASZIP_API laszip_I32
 laszip_request_compatibility_mode(
     laszip_POINTER                     pointer
-    , const laszip_BOOL                request
+    , const laszip_bool                request
 )
 {
   if (pointer == 0) return 1;
@@ -1513,8 +1513,8 @@ laszip_request_compatibility_mode(
 LASZIP_API laszip_I32
 laszip_create_spatial_index(
     laszip_POINTER                     pointer
-    , const laszip_BOOL                create
-    , const laszip_BOOL                append
+    , const laszip_bool                create
+    , const laszip_bool                append
 )
 {
   if (pointer == 0) return 1;
@@ -1558,7 +1558,7 @@ LASZIP_API laszip_I32
 laszip_open_writer(
     laszip_POINTER                     pointer
     , const laszip_CHAR*               file_name
-    , laszip_BOOL                      compress
+    , laszip_bool                      compress
 )
 {
   if (pointer == 0) return 1;
@@ -2869,7 +2869,7 @@ laszip_close_writer(
 LASZIP_API laszip_I32
 laszip_exploit_spatial_index(
     laszip_POINTER                     pointer
-    , const laszip_BOOL                exploit
+    , const laszip_bool                exploit
 )
 {
   if (pointer == 0) return 1;
@@ -2906,7 +2906,7 @@ LASZIP_API laszip_I32
 laszip_open_reader(
     laszip_POINTER                     pointer
     , const laszip_CHAR*               file_name
-    , laszip_BOOL*                     is_compressed
+    , laszip_bool*                     is_compressed
 )
 {
   if (pointer == 0) return 1;
@@ -2922,7 +2922,7 @@ laszip_open_reader(
 
     if (is_compressed == 0)
     {
-      sprintf(laszip_dll->error, "laszip_BOOL pointer 'is_compressed' is zero");
+      sprintf(laszip_dll->error, "laszip_bool pointer 'is_compressed' is zero");
       return 1;
     }
 
@@ -3820,8 +3820,8 @@ laszip_open_reader(
 LASZIP_API laszip_I32
 laszip_has_spatial_index(
     laszip_POINTER                     pointer
-    , laszip_BOOL*                     is_indexed
-    , laszip_BOOL*                     is_appended
+    , laszip_bool*                     is_indexed
+    , laszip_bool*                     is_appended
 )
 {
   if (pointer == 0) return 1;
@@ -3831,7 +3831,7 @@ laszip_has_spatial_index(
   {
     if (is_indexed == 0)
     {
-      sprintf(laszip_dll->error, "laszip_BOOL pointer 'is_indexed' is zero");
+      sprintf(laszip_dll->error, "laszip_bool pointer 'is_indexed' is zero");
       return 1;
     }
 
@@ -3890,7 +3890,7 @@ laszip_inside_rectangle(
     , const laszip_F64                 r_min_y
     , const laszip_F64                 r_max_x
     , const laszip_F64                 r_max_y
-    , laszip_BOOL*                     is_empty
+    , laszip_bool*                     is_empty
 )
 {
   if (pointer == 0) return 1;
@@ -3906,7 +3906,7 @@ laszip_inside_rectangle(
 
     if (is_empty == 0)
     {
-      sprintf(laszip_dll->error, "laszip_BOOL pointer 'is_empty' is zero");
+      sprintf(laszip_dll->error, "laszip_bool pointer 'is_empty' is zero");
       return 1;
     }
 
@@ -4071,7 +4071,7 @@ laszip_read_point(
 LASZIP_API laszip_I32
 laszip_read_inside_point(
     laszip_POINTER                     pointer
-    , laszip_BOOL*                     is_done
+    , laszip_bool*                     is_done
 )
 {
   if (pointer == 0) return 1;
