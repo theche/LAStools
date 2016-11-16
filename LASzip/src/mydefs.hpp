@@ -161,7 +161,7 @@ typedef union U64I64F64 { U64 u64; I64 i64; F64 f64; } U64I64F64;
 #define NULL    0
 #endif
 
-inline BOOL IS_LITTLE_ENDIAN()
+inline bool IS_LITTLE_ENDIAN()
 {
   const U32 i = 1;
   return (*((U8*)&i) == 1);
