@@ -30,20 +30,3 @@ install(FILES
 		${header_files}
 		DESTINATION include/
 )
-
-# not sure if copying the pdb is really required..
-if(EXISTS "${CMAKE_CURRENT_BINARY_DIR}/LASlib.dir/Debug/vc120.pdb")
-	install(FILES
-		${CMAKE_CURRENT_BINARY_DIR}/LASlib.dir/Debug/vc120.pdb 
-		DESTINATION lib/
-	)
-endif()
-
-if(EXISTS "${CMAKE_CURRENT_BINARY_DIR}/LASlib.dir/Debug/vc140.pdb")
-	install(FILES
-		${CMAKE_CURRENT_BINARY_DIR}/LASlib.dir/Debug/vc140.pdb
-		DESTINATION lib/
-	)
-endif()
-
-
