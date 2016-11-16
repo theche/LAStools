@@ -84,15 +84,7 @@ install(TARGETS laszip
 	LIBRARY DESTINATION lib/
 )
 
-
-
-
-
-
-
-
-
-
-
-
-
+install(FILES
+		${header_files}
+		DESTINATION include_laszip/
+)
