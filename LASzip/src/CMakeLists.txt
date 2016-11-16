@@ -1,5 +1,3 @@
-
-
 set(header_files
 	arithmeticdecoder.hpp
 	arithmeticencoder.hpp
@@ -77,9 +75,9 @@ endif()
 
 include_directories(. ../dll)
 
-add_library(laszip SHARED ${files})
+add_library(LASzip SHARED ${files})
 
-install(TARGETS laszip 
+install(TARGETS LASzip 
 	RUNTIME DESTINATION bin/
 	LIBRARY DESTINATION lib/
 )
