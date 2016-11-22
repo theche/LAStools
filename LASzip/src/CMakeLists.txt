@@ -79,7 +79,7 @@ add_library(LASzip SHARED ${files})
 
 install(TARGETS LASzip 
 	RUNTIME DESTINATION bin/
-	LIBRARY DESTINATION lib/
+	ARCHIVE DESTINATION lib/
 )
 
 install(FILES

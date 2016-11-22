@@ -52,8 +52,15 @@ include_directories(../LASzip/src)
 set(files ${header_files} ${source_files} ${header_files_laszip} ${source_files_laszip})
 
 add_definitions("-DNDEBUG")
+if(WIN32)
+	add_definitions("-D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS")
+	add_definitions("-D_CRT_SECURE_NO_WARNINGS")
+	add_definitions("-D_CRT_NONSTDC_NO_DEPRECATE")
+endif()
 
 add_library(LASlib ${files})
+
+target_link_libraries(LASlib LASzip)
 
 install(TARGETS LASlib
 	ARCHIVE DESTINATION lib/
